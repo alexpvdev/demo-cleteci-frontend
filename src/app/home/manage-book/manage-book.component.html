@@ -1,0 +1,29 @@
+<h4>{{data.isEdit ? 'Editar Libro' : 'Crear Libro'}}</h4>
+<form [formGroup]="bookForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Título</mat-label>
+    <input formControlName="titulo" matInput placeholder="Título">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Autor</mat-label>
+    <input formControlName="autor" matInput placeholder="Autor">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Páginas</mat-label>
+    <input formControlName="paginas" type="number" matInput placeholder="Páginas">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ISBN</mat-label>
+    <input formControlName="isbn" matInput placeholder="ISBN">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Editorial</mat-label>
+    <input formControlName="editorial" matInput placeholder="Editorial">
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" [disabled]="!bookForm.valid" (click)="manage()">{{data.isEdit ? 'Editar' : 'Crear'}}</button>
+</form>

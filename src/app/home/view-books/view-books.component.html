@@ -1,0 +1,16 @@
+
+<div>
+  <button  style="width: 35%;" color="primary" mat-raised-button (click)="manage(false, undefined)">Agregar libro</button>
+  <mat-list #bookList style="width: 35%;">
+    <mat-list-item style="margin: 10px; " *ngFor="let book of books">
+      <p style="width: 80%;">{{book.titulo}}</p>
+      <button mat-fab color="primary" (click)="manage(true, book)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button  (click)="delete(book)" mat-fab color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>
+
